@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b2d">
+<title>JLK Ótica | Experimente na sua selfie</title>
+<style>
+:root{--navy:#101b2d;--gold:#d7b56d;--cream:#f7f5f0;--muted:#667080}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1d2735;background:#fff}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92%);margin:auto}
+header{background:var(--navy);color:#fff}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:1.4px}.mark{border:2px solid var(--gold);border-radius:50%;width:40px;height:30px;display:grid;place-items:center;color:var(--gold);font-size:.75rem}.brand small{display:block;color:var(--gold);font-size:.58rem;letter-spacing:2px;margin-top:4px}.nav a:last-child{border:1px solid var(--gold);padding:10px 14px;color:var(--gold);border-radius:5px;font-size:.85rem}
+.hero{background:linear-gradient(120deg,#101b2d,#233a58);color:white;padding:54px 0}.hero-grid{display:grid;grid-template-columns:1fr .8fr;gap:35px;align-items:center}.eyebrow{color:var(--gold);font-size:.74rem;text-transform:uppercase;letter-spacing:2.5px;font-weight:bold}.hero h1{font-size:clamp(2.4rem,5vw,4.1rem);line-height:1.03;letter-spacing:-1.7px;margin:18px 0}.hero h1 em{color:var(--gold);font-style:normal}.hero p{color:#d6dfeb;line-height:1.8;max-width:540px}.hero-card{border:1px solid #ffffff30;background:#ffffff0b;border-radius:12px;padding:25px}.hero-card .emoji{font-size:3rem}.hero-card strong{display:block;font-size:1.2rem;margin:12px 0 7px}.hero-card span{color:#d4deeb;line-height:1.6;font-size:.9rem}
+section{padding:65px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 30px}.section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin:12px 0}.section-head p{color:var(--muted);line-height:1.7}
+.tryon{background:var(--cream)}.app{max-width:820px;margin:auto;background:#fff;border:1px solid #e1ded5;border-radius:14px;overflow:hidden;box-shadow:0 20px 55px #18253a12}.appbar{padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #ece9e2;flex-wrap:wrap}.appbar strong{font-size:.95rem}.badge{background:#e5eddf;color:#466141;padding:7px 10px;border-radius:20px;font-size:.72rem}.camera-area{position:relative;background:#151b23;height:min(72vh,560px);min-height:340px;display:grid;place-items:center;overflow:hidden}.camera-area video,.camera-area canvas{position:absolute;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}.camera-area video{opacity:0;pointer-events:none}.camera-area canvas{display:none;pointer-events:auto;touch-action:none;cursor:grab}.placeholder{text-align:center;color:#e6e9ef;padding:45px 20px;max-width:460px}.placeholder .big{font-size:3rem}.placeholder h3{margin:14px 0 8px}.placeholder p{color:#bdc6d2;line-height:1.6;font-size:.9rem}.loading{position:absolute;inset:auto 12px 12px;background:#0009;color:white;border-radius:8px;padding:10px 12px;font-size:.78rem;display:none;z-index:5}
+.controls{padding:20px}.btnrow{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:6px;padding:13px 16px;font-weight:bold;cursor:pointer;font-size:.88rem}.primary{background:var(--navy);color:#fff}.gold{background:var(--gold);color:var(--navy)}.secondary{background:#f1f2f4;color:#263247}.btn:disabled{opacity:.45;cursor:not-allowed}.smallnote{font-size:.78rem;color:#697383;line-height:1.6;margin:15px 0 0}.options{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}.control-label{display:flex;justify-content:space-between;gap:10px;font-size:.82rem;font-weight:bold;margin-bottom:10px}.control-label span{color:#697383;font-weight:normal}.swatches{display:flex;gap:10px;flex-wrap:wrap}.swatch{width:31px;height:31px;border-radius:50%;border:3px solid #fff;outline:1px solid #cbd0d6;cursor:pointer}.swatch[aria-pressed=true]{outline:2px solid #b48d3d;outline-offset:2px}.shapes{display:flex;gap:7px;flex-wrap:wrap}.shape{border:1px solid #d9dde2;background:white;color:#243247;border-radius:5px;padding:9px 11px;font-size:.78rem;cursor:pointer}.shape[aria-pressed=true]{background:var(--navy);color:white}.range{width:100%;accent-color:#9c7834}.tip{background:#fff7e6;border:1px solid #edddb5;color:#5f4a20;border-radius:8px;padding:13px 15px;font-size:.82rem;line-height:1.6;margin-top:18px}
+.privacy{display:grid;grid-template-columns:1fr 1fr;gap:22px}.privacy article{padding:23px;border:1px solid #e7e8eb;border-radius:10px}.privacy h3{margin:0 0 8px}.privacy p{color:var(--muted);line-height:1.7;font-size:.9rem;margin:0}.contact{background:var(--navy);color:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.contact p{color:#cbd5e2;line-height:1.7}.contactbox{border:1px solid #ffffff24;background:#ffffff0a;padding:24px;border-radius:10px;line-height:1.8}.contactbox span{color:#d0d8e3;font-size:.9rem}.cta{display:inline-block;margin-top:10px;background:var(--gold);color:var(--navy);padding:13px 17px;border-radius:5px;font-weight:bold}
+footer{background:#0b1422;color:#aeb9c8;padding:22px 0;font-size:.8rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:700px){.hero-grid{grid-template-columns:1fr}.hero-card{display:none}.nav{height:65px}.nav a:last-child{font-size:.75rem;padding:9px}.camera-area{min-height:350px}.options,.privacy,.contact-grid{grid-template-columns:1fr}.controls{padding:15px}section{padding:50px 0}}
+.btnrow.sub{margin-top:10px}.btn.sm{padding:9px 12px;font-size:.8rem}.notice{display:none;margin:0 0 14px;padding:12px 14px;background:#fdecec;border:1px solid #f1c0c0;color:#7a2323;border-radius:8px;font-size:.84rem;line-height:1.6}.notice button{margin-top:8px}.countdown{position:absolute;inset:0;display:none;place-items:center;font-size:6rem;font-weight:800;color:#fff;text-shadow:0 2px 20px #000a;z-index:6;pointer-events:none}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#inicio"><div class="mark">JLK</div><span>JLK ÓTICA<small>SEU OLHAR, SEU ESTILO</small></span></a><a href="#experimentar">Experimentar agora ↓</a></div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap hero-grid"><div><div class="eyebrow">Provador virtual demonstrativo</div><h1>Veja como os óculos ficam <em>em você.</em></h1><p>Tire uma selfie ou abra a câmera e experimente armações virtuais. Troque formatos e cores para comparar estilos sem sair desta página.</p></div><div class="hero-card"><div class="emoji">👓 📸</div><strong>Seu rosto. Seu estilo.</strong><span>Experimente os modelos na sua própria foto. A imagem é processada neste navegador e não é enviada para um servidor por este protótipo.</span></div></div></section>
+<section class="tryon" id="experimentar"><div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#9c7834">Provador virtual</div><h2>Experimente na sua selfie</h2><p>Envie uma foto de frente ou permita acesso à câmera. Depois, ajuste a posição e o tamanho dos óculos para encaixar no seu rosto.</p></div>
+<div class="app"><div class="appbar"><strong>JLK Virtual Try-On</strong><span class="badge" id="status">Aguardando uma foto</span></div>
+<div class="camera-area" id="cameraArea"><video id="video" playsinline autoplay muted></video><canvas id="overlay"></canvas><div class="placeholder" id="placeholder"><div class="big">📷</div><h3>Vamos experimentar?</h3><p>Toque em <b>Abrir câmera</b> e, quando o navegador perguntar, escolha <b>“Permitir durante o acesso ao site”</b>. Ou escolha uma selfie salva. Fique de frente, com boa iluminação e olhos visíveis.</p></div><div class="countdown" id="countdown"></div></div>
+<div class="controls"><div class="notice" id="notice" role="alert"></div><div class="btnrow"><button class="btn primary" type="button" id="cameraBtn">Abrir câmera</button><button class="btn gold" type="button" id="captureBtn">📷 Tirar selfie</button><button class="btn secondary" type="button" id="choosePhotoBtn">Escolher foto</button><input id="fileInput" type="file" accept="image/*" hidden><input id="selfieInput" type="file" accept="image/*" capture="user" hidden></div><div class="btnrow sub"><button class="btn secondary sm" type="button" id="timerBtn" disabled>⏱ Timer 3s</button><button class="btn secondary sm" type="button" id="flipBtn" disabled>🔄 Virar câmera</button><button class="btn secondary sm" type="button" id="stopBtn" disabled>Fechar câmera</button><button class="btn secondary sm" type="button" id="saveBtn" disabled>💾 Salvar imagem</button><button class="btn secondary sm" type="button" id="resetBtn">Redefinir ajuste</button></div>
+<div class="options"><div><div class="control-label">Cor da armação <span id="colorName">Preto</span></div><div class="swatches"><button class="swatch" data-color="#171717" data-color2="#555555" data-name="Preto" style="background:linear-gradient(135deg,#171717,#555)" aria-label="Preto" aria-pressed="true"></button><button class="swatch" data-color="#172943" data-color2="#43536a" data-name="Azul-marinho" style="background:linear-gradient(135deg,#172943,#43536a)" aria-label="Azul-marinho" aria-pressed="false"></button><button class="swatch" data-color="#8b603f" data-color2="#c49a72" data-name="Tartaruga" style="background:linear-gradient(135deg,#8b603f,#c49a72)" aria-label="Tartaruga" aria-pressed="false"></button><button class="swatch" data-color="#b5a07b" data-color2="#e1d1af" data-name="Champanhe" style="background:linear-gradient(135deg,#b5a07b,#e1d1af)" aria-label="Champanhe" aria-pressed="false"></button><button class="swatch" data-color="#8a9c9c" data-color2="#d5dfdc" data-name="Prata" style="background:linear-gradient(135deg,#8a9c9c,#d5dfdc)" aria-label="Prata" aria-pressed="false"></button></div></div>
+<div><div class="control-label">Formato <span id="shapeName">Clássico</span></div><div class="shapes"><button class="shape" data-shape="classic" aria-pressed="true">Clássico</button><button class="shape" data-shape="round" aria-pressed="false">Redondo</button><button class="shape" data-shape="square" aria-pressed="false">Quadrado</button><button class="shape" data-shape="cat" aria-pressed="false">Gatinho</button></div></div>
+<div><div class="control-label">Tamanho dos óculos <span id="scaleLabel">100%</span></div><input class="range" id="scale" type="range" min="50" max="160" value="100"></div><div><div class="control-label">Posição vertical <span id="yLabel">0</span></div><input class="range" id="yOffset" type="range" min="-300" max="300" value="0"></div></div>
+<div class="tip"><strong>Dica:</strong> depois de tirar ou escolher a foto, arraste os óculos com o dedo ou mouse para posicioná-los sobre os olhos. Ajuste tamanho e altura nos controles. Em navegadores compatíveis, o encaixe no rosto é automático.</div><p class="smallnote">Este é um protótipo visual: a armação é um desenho 2D sobre a foto, não um modelo 3D que acompanha automaticamente o rosto. Para verificação mais precisa, seria necessário integrar rastreamento facial e modelos de armações reais. A câmera só funciona em HTTPS ou localhost e depende da permissão do navegador. Se a câmera ao vivo não estiver disponível (por exemplo, HTML aberto direto no celular), o botão Tirar selfie abre a câmera nativa do aparelho.</p></div></div></div></section>
+<section><div class="wrap privacy"><article><h3>🔒 Privacidade</h3><p>Esta demonstração não envia a selfie a um servidor: a foto é exibida e processada localmente nesta página. Se publicar uma versão com serviços externos, reveja a privacidade antes de disponibilizar.</p></article><article><h3>👓 Modelos ilustrativos</h3><p>As armações, cores e formatos são exemplos gráficos. Antes de usar comercialmente, substitua por fotos ou modelos autorizados dos produtos reais da JLK Ótica.</p></article></div></section>
+<section class="contact"><div class="wrap contact-grid"><div><div class="eyebrow">JLK Ótica</div><h2>Gostou de algum estilo?</h2><p>Fale com a loja para confirmar os modelos disponíveis e conhecer as armações pessoalmente.</p><a class="cta" id="whatsappBtn" href="https://wa.me/5583000000000">Consultar modelos no WhatsApp ↗</a></div><div class="contactbox"><b>Endereço informado</b><br><span>Rua da Produção, 96, Box B<br>Bairro das Indústrias — João Pessoa/PB</span><p style="color:#f1d99d;font-size:.78rem">Confirme o endereço e substitua o telefone fictício antes de publicar.</p></div></div></section>
+</main><footer><div class="wrap foot"><div><strong style="color:white">JLK ÓTICA</strong> · Seu olhar, seu estilo.</div><div>© <span id="year"></span> JLK Ótica · Demonstração</div></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+$('year').textContent=new Date().getFullYear();
+const video=$('video'), canvas=$('overlay'), ctx=canvas.getContext('2d');
+let stream=null,source=null,sourceType=null,dragging=false,dragStart=null,offsetX=0,color='#171717',color2='#555555',shape='classic',scale=1,yShift=0,raf=null,facing='user',lastUrl=null,faceT=null,faceC=null,detecting=false,lastDetect=0,timerId=null,detector=null;
+try{if('FaceDetector' in window)detector=new FaceDetector({fastMode:true,maxDetectedFaces:1})}catch(e){}
+const mirrored=()=>sourceType==='camera'&&facing==='user';
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const shapes={
+classic:{left:'M30 62 Q95 35 206 61 L192 151 Q181 197 120 195 Q60 193 47 145 Z',right:'M310 61 Q425 35 490 62 L473 145 Q460 193 400 195 Q339 197 328 151 Z',bridge:'M205 76 Q260 48 315 76'},
+round:{left:'M45 105 C45 51 77 35 119 38 C165 40 190 66 188 112 C186 159 160 190 116 190 C70 190 45 158 45 105 Z',right:'M332 105 C330 66 355 40 401 38 C443 35 475 51 475 105 C475 158 450 190 404 190 C360 190 334 159 332 112 Z',bridge:'M188 72 Q260 42 332 72'},
+square:{left:'M35 48 Q35 43 47 43 L190 43 Q205 43 205 59 L193 156 Q190 178 171 180 L72 180 Q51 179 47 156 Z',right:'M315 59 Q315 43 330 43 L473 43 Q485 43 485 48 L473 156 Q469 179 448 180 L349 180 Q330 178 327 156 Z',bridge:'M205 58 Q260 40 315 58'},
+cat:{left:'M25 55 Q87 35 200 62 L190 145 Q181 184 130 187 Q72 190 51 143 Z',right:'M320 62 Q433 35 495 55 L469 143 Q448 190 390 187 Q339 184 330 145 Z',bridge:'M200 70 Q260 43 320 70'}
+};
+function setStatus(s){$('status').textContent=s}
+function notice(msg,native){const n=$('notice');n.textContent='';if(!msg){n.style.display='none';return}n.append(msg);if(native){const b=document.createElement('button');b.type='button';b.className='btn gold sm';b.textContent='Usar a câmera do aparelho';b.onclick=()=>$('selfieInput').click();n.append(document.createElement('br'),b)}n.style.display='block'}
+function dims(){const r=$('cameraArea').getBoundingClientRect();return{w:Math.max(1,r.width),h:Math.max(1,r.height)}}
+function ui(){const cam=!!stream;$('captureBtn').textContent=cam?'📸 Capturar agora':'📷 Tirar selfie';['stopBtn','timerBtn','flipBtn'].forEach(i=>$(i).disabled=!cam);$('saveBtn').disabled=!source}
+function syncSliders(){$('yOffset').value=yShift;$('yLabel').textContent=Math.round(yShift);$('scale').value=Math.round(scale*100);$('scaleLabel').textContent=Math.round(scale*100)+'%'}
+function frame(){
+if(!source)return;
+const sw=source.videoWidth||source.naturalWidth,sh=source.videoHeight||source.naturalHeight;if(!sw||!sh)return;
+const d=dims(),dpr=window.devicePixelRatio||1,W=Math.round(d.w*dpr),H=Math.round(d.h*dpr);
+if(canvas.width!==W||canvas.height!==H){canvas.width=W;canvas.height=H}
+canvas.style.display='block';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,d.w,d.h);
+const fit=Math.min(d.w/sw,d.h/sh),dw=sw*fit,dh=sh*fit,dx=(d.w-dw)/2,dy=(d.h-dh)/2,mir=mirrored();
+ctx.save();if(mir){ctx.translate(d.w,0);ctx.scale(-1,1)}ctx.drawImage(source,dx,dy,dw,dh);ctx.restore();
+const map=(x,y)=>{const X=dx+x*fit;return{x:mir?d.w-X:X,y:dy+y*fit}};
+let cx=d.w/2,cy=dy+dh*.36,gw=Math.min(dw*.84,450),ang=0;
+if(faceT&&faceC){const k=sourceType==='camera'?.35:1;for(const q in faceC)faceC[q]+=(faceT[q]-faceC[q])*k;
+let a=map(faceC.lx,faceC.ly),b=map(faceC.rx,faceC.ry);if(a.x>b.x)[a,b]=[b,a];
+cx=(a.x+b.x)/2;cy=(a.y+b.y)/2;gw=Math.hypot(b.x-a.x,b.y-a.y)/.54;ang=Math.atan2(b.y-a.y,b.x-a.x)}
+gw*=scale;const gh=gw*250/520;
+ctx.save();ctx.translate(cx+offsetX,cy+yShift);ctx.rotate(ang);ctx.scale(gw/520,gh/250);ctx.translate(-260,-125);
+ctx.lineWidth=13;ctx.lineJoin='round';ctx.lineCap='round';
+const sp=shapes[shape],grad=ctx.createLinearGradient(0,0,520,220);grad.addColorStop(0,color);grad.addColorStop(1,color2);
+ctx.strokeStyle=grad;ctx.fillStyle='rgba(215,181,109,.16)';
+[sp.left,sp.right].forEach(p=>{const path=new Path2D(p);ctx.fill(path);ctx.stroke(path)});
+ctx.stroke(new Path2D(sp.bridge));
+ctx.beginPath();ctx.moveTo(37,69);ctx.lineTo(7,49);ctx.moveTo(483,69);ctx.lineTo(513,49);ctx.stroke();
+ctx.strokeStyle='rgba(255,255,255,.42)';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(59,77);ctx.quadraticCurveTo(96,60,128,64);ctx.moveTo(339,64);ctx.quadraticCurveTo(381,59,420,74);ctx.stroke();ctx.restore();
+}
+async function detect(snap){
+if(!detector||!source||detecting)return;detecting=true;
+try{const f=(await detector.detect(source))[0];
+if(f){const eyes=(f.landmarks||[]).filter(l=>l.type==='eye'&&l.locations?.length).map(l=>({x:l.locations.reduce((t,p)=>t+p.x,0)/l.locations.length,y:l.locations.reduce((t,p)=>t+p.y,0)/l.locations.length})).sort((a,b)=>a.x-b.x);
+let t;if(eyes.length>=2)t={lx:eyes[0].x,ly:eyes[0].y,rx:eyes[eyes.length-1].x,ry:eyes[eyes.length-1].y};
+else{const b=f.boundingBox,y=b.y+b.height*.42;t={lx:b.x+b.width*.27,ly:y,rx:b.x+b.width*.73,ry:y}}
+faceT=t;if(snap||!faceC)faceC={...t};if(snap)setStatus('Óculos ajustados ao rosto')}
+else{faceT=null;faceC=null;if(snap)setStatus('Rosto não detectado — arraste os óculos')}
+}catch(e){detector=null;faceT=faceC=null}
+detecting=false;if(sourceType==='photo')frame()}
+function loop(){if(sourceType!=='camera'||!stream)return;frame();const now=performance.now();if(detector&&now-lastDetect>250){lastDetect=now;detect()}raf=requestAnimationFrame(loop)}
+function stopStream(){if(stream)stream.getTracks().forEach(t=>t.stop());stream=null;video.srcObject=null;cancelAnimationFrame(raf);clearInterval(timerId);timerId=null;$('countdown').style.display='none'}
+function setSource(img,type,msg){stopStream();source=img;sourceType=type;faceT=faceC=null;offsetX=0;yShift=0;syncSliders();$('placeholder').style.display='none';notice('');setStatus(msg);ui();frame();if(type==='photo')detect(true)}
+function closeCamera(){stopStream();if(sourceType==='camera'){source=null;sourceType=null;faceT=faceC=null;canvas.style.display='none';$('placeholder').style.display='block';setStatus('Câmera fechada')}ui()}
+const hasCam=()=>!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)&&window.isSecureContext;
+async function openCamera(){
+notice('');
+if(!hasCam()){notice('A câmera ao vivo exige HTTPS (ou localhost) e um navegador compatível. Você ainda pode tirar a selfie com a câmera nativa do aparelho.',true);return}
+try{stopStream();stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:facing,width:{ideal:1280},height:{ideal:960}},audio:false});
+video.srcObject=stream;await video.play();source=video;sourceType='camera';faceT=faceC=null;$('placeholder').style.display='none';setStatus('Câmera ativa — enquadre o rosto e capture');ui();loop()}
+catch(e){stopStream();ui();const m={NotAllowedError:'Você não permitiu a câmera. Toque no cadeado ao lado do endereço do site, ative a Câmera e tente de novo.',NotFoundError:'Nenhuma câmera encontrada neste aparelho.',NotReadableError:'A câmera está em uso por outro aplicativo.'}[e.name]||'Não foi possível abrir a câmera.';notice(m+' Você pode usar a câmera nativa do aparelho.',true)}}
+function loadBlob(b,msg){const url=URL.createObjectURL(b),img=new Image();img.onload=()=>{if(lastUrl)URL.revokeObjectURL(lastUrl);lastUrl=url;setSource(img,'photo',msg)};img.onerror=()=>{URL.revokeObjectURL(url);notice('Não foi possível abrir essa imagem. Tente escolher outra foto.')};img.src=url}
+function capture(){
+if(!stream||!video.videoWidth){setStatus('Aguarde a câmera carregar…');return}
+const c=document.createElement('canvas');c.width=video.videoWidth;c.height=video.videoHeight;const x=c.getContext('2d');
+if(mirrored()){x.translate(c.width,0);x.scale(-1,1)}x.drawImage(video,0,0);
+c.toBlob(b=>{if(b)loadBlob(b,'Selfie capturada')},'image/jpeg',.92)}
+function timer(){if(!stream||timerId)return;let n=3;const el=$('countdown');el.style.display='grid';el.textContent=n;timerId=setInterval(()=>{n--;if(n>0){el.textContent=n}else{clearInterval(timerId);timerId=null;el.style.display='none';capture()}},1000)}
+$('cameraBtn').addEventListener('click',openCamera);
+$('captureBtn').addEventListener('click',()=>{if(stream)return capture();if(!hasCam())return $('selfieInput').click();openCamera()});
+$('choosePhotoBtn').addEventListener('click',()=>$('fileInput').click());
+['fileInput','selfieInput'].forEach(id=>$(id).addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];e.target.value='';if(!f)return;if(f.type&&!f.type.startsWith('image/'))return notice('Escolha um arquivo de imagem.');loadBlob(f,id==='selfieInput'?'Selfie carregada':'Foto carregada')}));
+$('flipBtn').addEventListener('click',()=>{facing=facing==='user'?'environment':'user';openCamera()});
+$('stopBtn').addEventListener('click',closeCamera);
+$('timerBtn').addEventListener('click',timer);
+$('resetBtn').addEventListener('click',()=>{offsetX=0;yShift=0;scale=1;syncSliders();frame()});
+$('saveBtn').addEventListener('click',()=>{if(!source)return;frame();canvas.toBlob(async b=>{if(!b)return;const f=new File([b],'jlk-otica-provador.png',{type:'image/png'});try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'JLK Ótica'});return}}catch(e){if(e.name==='AbortError')return}const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=f.name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)},'image/png')});
+document.querySelectorAll('.swatch').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.swatch').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');color=b.dataset.color;color2=b.dataset.color2;$('colorName').textContent=b.dataset.name;frame()}));
+document.querySelectorAll('.shape').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.shape').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');shape=b.dataset.shape;$('shapeName').textContent=b.textContent;frame()}));
+$('scale').addEventListener('input',e=>{scale=Number(e.target.value)/100;$('scaleLabel').textContent=e.target.value+'%';frame()});
+$('yOffset').addEventListener('input',e=>{yShift=Number(e.target.value);$('yLabel').textContent=e.target.value;frame()});
+canvas.addEventListener('pointerdown',e=>{if(!source)return;dragging=true;dragStart={x:e.clientX,y:e.clientY,ox:offsetX,oy:yShift};canvas.setPointerCapture(e.pointerId);canvas.style.cursor='grabbing'});
+canvas.addEventListener('pointermove',e=>{if(!dragging||!dragStart)return;offsetX=clamp(dragStart.ox+e.clientX-dragStart.x,-dims().w,dims().w);yShift=clamp(dragStart.oy+e.clientY-dragStart.y,-300,300);$('yOffset').value=yShift;$('yLabel').textContent=Math.round(yShift);frame()});
+const endDrag=()=>{dragging=false;dragStart=null;canvas.style.cursor='grab'};
+canvas.addEventListener('pointerup',endDrag);canvas.addEventListener('pointercancel',endDrag);
+window.addEventListener('resize',()=>{if(source)frame()});
+window.addEventListener('pagehide',()=>{stopStream();ui()});
+$('whatsappBtn').href='https://wa.me/5583000000000?text='+encodeURIComponent('Olá, gostaria de experimentar os modelos da JLK Ótica.');
+ui();
+</script>
+</body></html>
